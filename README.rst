@@ -11,6 +11,11 @@ Say you need a Docker image for 'foo' version 2, but the latest version on the
 Steinwurf organization on Docker Hub is 'foo' version 1. You can then create
 a 'foo-2' folder and a Dockerfile for the image.
 
+If you are new to Dockerfiles, here are some ressources to get you started:
+
+* `_Dockerfile tutorial by example <https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/>`
+* `_Dockerfile reference <https://docs.docker.com/engine/reference/builder/>`
+
 Once the Dockerfile is ready you can login to the Steinwurf Docker Hub account
 from the command-line::
 
