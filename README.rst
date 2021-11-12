@@ -9,7 +9,7 @@ Maintainance
 
 Say you need a Docker image for 'foo' version 2, but the latest version on the
 Steinwurf organization on Docker Hub is 'foo' version 1. You can then create
-the a 'foo-2' folder and a Dockerfile for the image.
+a 'foo-2' folder and a Dockerfile for the image.
 
 Once the Dockerfile is ready you can login to the Steinwurf Docker Hub account
 from the command-line::
