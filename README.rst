@@ -2,7 +2,7 @@ Steinwurf Docker Build Images
 =============================
 
 This repository contains the Dockerfiles for the different Docker images on
-Steinwurf's Docker Hub (`_Steinwurf Docker Hub <https://hub.docker.com/u/steinwurf>`).
+Steinwurf's Docker Hub (`Steinwurf Docker Hub <https://hub.docker.com/u/steinwurf>`_).
 
 Maintainance
 ------------
@@ -13,8 +13,8 @@ a 'foo-2' folder and a Dockerfile for the image.
 
 If you are new to Dockerfiles, here are some ressources to get you started:
 
-* `_Dockerfile tutorial by example <https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/>`
-* `_Dockerfile reference <https://docs.docker.com/engine/reference/builder/>`
+* `Dockerfile tutorial by example <https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/>`_
+* `Dockerfile reference <https://docs.docker.com/engine/reference/builder/>`_
 
 Once the Dockerfile is ready you can login to the Steinwurf Docker Hub account
 from the command-line::
