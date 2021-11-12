@@ -16,8 +16,8 @@ If you are new to Dockerfiles, here are some ressources to get you started:
 * `Dockerfile tutorial by example <https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/>`_
 * `Dockerfile reference <https://docs.docker.com/engine/reference/builder/>`_
 
-Once the Dockerfile is ready you can login to the Steinwurf Docker Hub account
-from the command-line::
+If you want to push the image to Docker Hub login to the Steinwurf account from
+the command-line::
 
     docker login -u username -p password
 
