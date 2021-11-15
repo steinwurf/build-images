@@ -16,6 +16,10 @@ RUN apt update --yes && \
         ca-certificates \
         # Latest version of cmake (3.16.3) on Ubuntu 20.04
         cmake \
+        # Get SSH Client for Github Actions
+        openssh-client \
+        # Need make for cmake
+        make \
         git
 
 RUN cmake --version

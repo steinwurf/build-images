@@ -14,6 +14,8 @@ RUN apt update --yes && \
         clang \
         # Required for the actions/checkout@v2 plugin
         ca-certificates \
+        # Get SSH Client for Github Actions
+        openssh-client \
         git
 
 RUN clang --version
