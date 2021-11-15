@@ -10,12 +10,12 @@ RUN apt update --yes && \
     apt install --yes --no-install-recommends \
         # Need python 3 for waf
         python3 \
-        # Latest version of gcc (9.3.0) on Ubuntu 20.04
-        g++ \
+        # Latest version of clang (10.0) on Ubuntu 20.04
+        clang \
         # Required for the actions/checkout@v2 plugin
         ca-certificates \
         git
 
-RUN g++ --version
+RUN clang --version
 
 ENTRYPOINT [""]
