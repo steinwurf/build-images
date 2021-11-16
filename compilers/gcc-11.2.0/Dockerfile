@@ -2,6 +2,8 @@ FROM ubuntu:21.10
 
 USER root
 
+LABEL org.opencontainers.image.source https://github.com/steinwurf/build-images
+
 # This prevents the frontend from hanging the entire process (especially for
 # the geography questions in Ubuntu)
 ENV DEBIAN_FRONTEND=noninteractive

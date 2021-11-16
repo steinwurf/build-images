@@ -1,5 +1,7 @@
 FROM ubuntu:21.10
 
+LABEL org.opencontainers.image.source https://github.com/steinwurf/build-images
+
 USER root
 
 # This prevents the frontend from hanging the entire process (especially for

@@ -23,11 +23,18 @@ the command-line::
 
 Then you can build your image::
 
-    docker build /path/to/foo-2/ --tag steinwurf/foo:2
+    docker build /path/to/foo-2/ --tag ghcr.io/steinwurf/foo:2
 
 Make sure that the container works as intended and finally push it to docker hub::
 
-    docker push steinwurf/foo:2
+    docker push ghcr.io/steinwurf/foo:2
 
 Make sure to commit the 'foo-2' folder to this Github repository to keep
 the Docker Hub in sync with this repo.
+
+Versioning
+----------
+
+We version our tools with semantic versioning. We separate the version of the
+package in the image from the version of the image. For example, if you add
+version 10 of clang, it would be called clang-10:1.0.0 in the above tag.
