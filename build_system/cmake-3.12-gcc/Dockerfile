@@ -16,7 +16,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 RUN apt update --yes && \
     apt install --yes --no-install-recommends \
-        g++-8-multilib \
+        g++-6-multilib \
         # Required for the actions/checkout@v2 plugin
         ca-certificates \
         # Get SSH Client for Github Actions
@@ -28,10 +28,10 @@ RUN apt update --yes && \
         python3.7
 
 # Get cmake 3.12.4
-RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 100 \
-    && update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-8 100 \
-    && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 100 \
-    && update-alternatives --install /usr/bin/cc cc /usr/bin/gcc-8 100 \
+RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 100 \
+    && update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-6 100 \
+    && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 100 \
+    && update-alternatives --install /usr/bin/cc cc /usr/bin/gcc-6 100 \
     && ln -s /usr/include/locale.h /usr/include/xlocale.h \
     && rm -rf /var/lib/apt/lists/* \
     && wget --no-check-certificate --quiet https://cmake.org/files/v${CMAKE_VERSION_MAJOR_MINOR}/cmake-${CMAKE_VERSION_FULL}-Linux-x86_64.tar.gz \
