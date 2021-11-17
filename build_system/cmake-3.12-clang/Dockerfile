@@ -11,7 +11,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     CMAKE_VERSION_FULL=3.12.4 \
     PYENV_ROOT=/opt/pyenv \
     PATH=/opt/pyenv/shims:${PATH} \
-    CXX=/usr/bin/clang \
+    CXX=/usr/bin/clang++ \
     CC=/usr/bin/clang
 
 RUN apt update --yes && \
@@ -42,7 +42,8 @@ RUN ln -s /usr/include/locale.h /usr/include/xlocale.h \
 
 # Set up path for python3.7 to python3
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 100
-RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.9 100
+RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.9 100 \
+    && update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.9 100
 
 RUN clang --version
 RUN cmake --version

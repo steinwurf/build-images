@@ -36,5 +36,9 @@ Versioning
 ----------
 
 We version our tools with semantic versioning. We separate the version of the
-package in the image from the version of the image. For example, if you add
+package in the image from the version of the image. For example, if you add a new
 version 10 of clang, it would be called clang-10:1.0.0 in the above tag.
+
+When you release a new version of an image, remember to update the 'latest'-tag,
+such that Github Actions workflows, that always use the latest version of the
+image, are updated.
