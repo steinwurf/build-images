@@ -30,7 +30,7 @@ Make sure that the container works as intended and finally push it to github pac
     docker push ghcr.io/steinwurf/foo:2
 
 Make sure to commit the 'foo-2' folder to this Github repository to keep
-the Docker Hub in sync with this repo.
+the packages in sync with this repo.
 
 Versioning
 ----------
