@@ -25,7 +25,7 @@ Then you can build your image::
 
     docker build /path/to/foo-2/ --tag ghcr.io/steinwurf/foo:2
 
-Make sure that the container works as intended and finally push it to docker hub::
+Make sure that the container works as intended and finally push it to github packages::
 
     docker push ghcr.io/steinwurf/foo:2
 
