@@ -15,7 +15,7 @@ RUN apt update --yes && \
         g++ \
         perl \
         make \
-        linux-headers-$(uname -r) \
+        linux-headers-amd64 \
         # Required for the actions/checkout@v2 plugin
         ca-certificates \
         # Get SSH Client for Github Actions
