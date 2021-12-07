@@ -12,8 +12,10 @@ RUN apt update --yes && \
     apt install --yes --no-install-recommends \
         # Need python 3 for waf
         python3 \
-        # Latest version of gcc (11.2.0) on Ubuntu 21.10
         g++ \
+        perl \
+        make \
+        linux-headers-$(uname -r) \
         # Required for the actions/checkout@v2 plugin
         ca-certificates \
         # Get SSH Client for Github Actions
