@@ -1,4 +1,4 @@
-FROM ubuntu:21.10
+FROM ubuntu:20.04
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
@@ -19,6 +19,7 @@ RUN apt update --yes && \
     apt install --yes --no-install-recommends \
         # Need python 3 for waf
         python3 \
+        g++ \
         # Latest version of cmake and make
         cmake \
         make \
@@ -30,24 +31,22 @@ RUN apt update --yes && \
         # Download utils for getting emscripten
         tar \
         xz-utils \
-        bzip2 \
-        # Node.js and npm
-        nodejs \
-        npm
+        bzip2
 
 RUN git clone https://github.com/emscripten-core/emsdk.git
 
 WORKDIR /emsdk
-
-RUN apt install --yes --no-install-recommends
 
 RUN ./emsdk install 3.1.6 && \
     ./emsdk activate 3.1.6
 
 WORKDIR /
 
+RUN apt install --yes --no-install-recommends npm \
+    && npm install -g npm@8.5.3
+
+RUN bash -c "source ${HOME}/.bashrc"
+
 RUN em++ --version
-
-
 
 ENTRYPOINT [""]
