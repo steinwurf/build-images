@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:18.04
 
 USER root
 
@@ -12,11 +12,12 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
-        # Required for the actions/checkout@v2 plugin
-        ca-certificates \
-        python3 \
-        openssh-client \
-        git \
-        build-essential
+    # Required for the actions/checkout@v2 plugin
+    ca-certificates \
+    python3 \
+    python3-venv \
+    openssh-client \
+    git \
+    build-essential
 
 RUN python3 --version
