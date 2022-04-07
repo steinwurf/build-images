@@ -13,5 +13,3 @@ do
     fi
 done
 
-#import the data from the csv file
-/opt/mssql-tools/bin/bcp DemoData.dbo.Products in "/usr/src/app/Products.csv" -c -t',' -S localhost -U sa -P Yukon900
