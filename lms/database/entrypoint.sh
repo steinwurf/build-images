@@ -5,10 +5,11 @@
 #run the setup script to create the DB and the schema in the DB
 #do this in a loop because the timing for when the SQL instance is ready is indeterminate
 # pytest tests
-
+sleep 5
 for i in {1..5};
 do
     python main.py
+    sleep 2
 done
 
 
