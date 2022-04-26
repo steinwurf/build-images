@@ -4,13 +4,17 @@ services:
     build: .
     ports:
       - "8000:5000"
+    tty: true
+    networks:
+      - net
     
   azureasql:
     image: "mcr.microsoft.com/azure-sql-edge:latest"
     ports:
       - "1433:1433"
-      
     environment:
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD=yourStrong(!)Password
+    networks:
+      - net
 
