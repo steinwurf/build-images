@@ -14,6 +14,7 @@ RUN apt update --yes && \
         python3 \
         python3-dev \
         libpython3-dev \
+        python3-venv \
         # Latest version of gcc (9.3.0) on Ubuntu 20.04
         g++ \
         build-essential \
