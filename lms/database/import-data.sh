@@ -13,3 +13,4 @@ do
     fi
 done
 
+#import the data from the csv file

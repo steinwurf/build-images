@@ -1,21 +1,8 @@
-FROM mcr.microsoft.com/azure-sql-edge:latest
-# Switch to root user for access to apt-get install
-USER root
+# syntax=docker/dockerfile:1
+FROM python:latest
+COPY . .
+RUN apt-get update
+RUN apt-get install unixodbc-dev -y
 
-LABEL org.opencontainers.image.source https://github.com/steinwurf/build-images
-
-# Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-
-# Bundle app source
-COPY . /usr/src/app
-
-
-# Grant permissions for the import-data script to be executable
-RUN chmod +x /usr/src/app/import-data.sh
-
-
-# Switch back to mssql user and run the entrypoint script
-USER mssql
+RUN pip install -r dev-requirements.txt
 ENTRYPOINT /bin/bash ./entrypoint.sh
