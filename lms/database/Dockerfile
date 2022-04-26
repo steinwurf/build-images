@@ -11,5 +11,4 @@ RUN apt-get install -y unixodbc-dev
 
 # RUN pip install -r dev-requirements.txt
 RUN pip install pyodbc
-ENTRYPOINT /bin/bash 
-#./entrypoint.sh
+ENTRYPOINT /bin/bash ./entrypoint.sh
