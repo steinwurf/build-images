@@ -5,13 +5,47 @@ This repository contains the Dockerfiles for the different Docker images that ar
 Github Container Registry (GHCR).
 They are visible in the Organizations 'packages' tab and in this repository's package tab.
 
+Adding new Container
+--------------------
+When adding a new docker container, please add a new Dockerfile to this repository.
+Make sure to include this line somewhere in the Dockerfile::
+
+    LABEL org.opencontainers.image.source https://github.com/steinwurf/build-images
+
+This will allow GHCR to link the uploaded image with the Dockerfile.
+
+You can follow this `guide <https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-to-the-container-registry>`_
+to authenticate with the GHCR.
+
+Build the image and push it to the GHCR with a tag. Initially this tag should be "latest"
+
+    docker build <IMAGE/PATH> -t ghcr.io/steinwurf/<IMAGE NAME>:latest
+
+Once the image is built you can upload it to the GHCR using the following command:
+
+    docker push ghcr.io/steinwurf/<IMAGE NAME>:latest
+
+Initially the image will be private. To change this please find the packages in this
+repository and change the visibility to public.
+
+https://github.com/orgs/steinwurf/packages?repo_name=build-images
+
+You can now test your container using the following command:
+
+    docker run -it ghcr.io/steinwurf/<IMAGE NAME>:latest
+
+Once you have verified that everything works you can deploy a versioned image to the GHCR.
+
+
+
+
 Maintainance
 ------------
 
 Say you need a Docker image for 'foo' version 2, but the latest version on Github is 'foo' version 1.
 You can then create a 'foo-2' folder and a Dockerfile for the image.
 
-If you are new to Dockerfiles, here are some ressources to get you started:
+If you are new to Dockerfiles, here are some resources to get you started:
 
 * `Dockerfile tutorial by example <https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/>`_
 * `Dockerfile reference <https://docs.docker.com/engine/reference/builder/>`_

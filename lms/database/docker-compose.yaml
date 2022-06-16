@@ -8,7 +8,6 @@ services:
     depends_on:
       - db
 
-    
   db:
     image: "mcr.microsoft.com/azure-sql-edge:latest"
     ports:
@@ -16,6 +15,3 @@ services:
     environment:
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD=yourStrong(!)Password
-
-
-
