@@ -36,8 +36,8 @@ You can now test your container using the following command:
 
 Once you have verified that everything works you can deploy a versioned image to the GHCR.
 
-
-
+    docker build <IMAGE/PATH> -t ghcr.io/steinwurf/<IMAGE NAME>:1.0.0
+    docker push ghcr.io/steinwurf/<IMAGE NAME>:1.0.0
 
 Maintainance
 ------------
