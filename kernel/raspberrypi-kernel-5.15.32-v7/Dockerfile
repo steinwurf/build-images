@@ -14,6 +14,7 @@ RUN apt update --yes && \
     wget \
     bc \
     gcc \
+    g++ \
     bison \
     flex \
     libssl-dev \
