@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 USER root
 
@@ -15,7 +15,7 @@ RUN apt update --yes && \
     python3-dev \
     libpython3-dev \
     python3-venv \
-    python3-distutils \
+    python3-wheel \
     python3-pip \
     # Latest version of gcc (9.3.0) on Ubuntu 20.04
     g++ \
@@ -29,4 +29,4 @@ RUN apt update --yes && \
     openssh-client \
     git
 
-RUN g++ --version
+RUN python3 -m pip install wheel
