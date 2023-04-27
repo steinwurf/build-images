@@ -27,6 +27,8 @@ RUN apt update --yes && \
     ca-certificates \
     # Get SSH Client for Github Actions
     openssh-client \
-    git
+    git \
+    iproute2 \
+    iperf
 
 RUN python3 -m pip install wheel
