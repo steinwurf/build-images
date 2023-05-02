@@ -29,6 +29,7 @@ RUN apt update --yes && \
     openssh-client \
     git \
     iproute2 \
-    iperf
+    iperf \
+    iputils-ping
 
 RUN python3 -m pip install wheel
