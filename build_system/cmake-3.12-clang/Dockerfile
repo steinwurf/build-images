@@ -18,34 +18,34 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 RUN apt update --yes && \
     apt install --yes --no-install-recommends \
-        # Required for the actions/checkout@v2 plugin
-        ca-certificates \
-        # Get SSH Client for Github Actions
-        openssh-client \
-        # Need make for cmake
-        make \
-        wget \
-        git \
-        python3.7 \
-        clang-3.9
+    # Required for the actions/checkout@v2 plugin
+    ca-certificates \
+    # Get SSH Client for Github Actions
+    openssh-client \
+    # Need make for cmake
+    make \
+    wget \
+    git \
+    python3.7 \
+    clang-4.0
 
 # Get cmake 3.12.4
 RUN ln -s /usr/include/locale.h /usr/include/xlocale.h \
     && rm -rf /var/lib/apt/lists/* \
     && wget --no-check-certificate --quiet https://cmake.org/files/v${CMAKE_VERSION_MAJOR_MINOR}/cmake-${CMAKE_VERSION_FULL}-Linux-x86_64.tar.gz \
     && tar -xzf cmake-${CMAKE_VERSION_FULL}-Linux-x86_64.tar.gz \
-       --exclude=bin/cmake-gui \
-       --exclude=doc/cmake \
-       --exclude=share/cmake-${CMAKE_VERSION_MAJOR_MINOR}/Help \
-       --exclude=share/vim \
+    --exclude=bin/cmake-gui \
+    --exclude=doc/cmake \
+    --exclude=share/cmake-${CMAKE_VERSION_MAJOR_MINOR}/Help \
+    --exclude=share/vim \
     && cp -fR cmake-${CMAKE_VERSION_FULL}-Linux-x86_64/* /usr \
     && rm -rf cmake-${CMAKE_VERSION_FULL}-Linux-x86_64 \
     && rm cmake-${CMAKE_VERSION_FULL}-Linux-x86_64.tar.gz
 
 # Set up path for python3.7 to python3
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 100
-RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.9 100 \
-    && update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.9 100
+RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-4.0 100 \
+    && update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-4.0 100
 
 RUN clang++ --version
 RUN cmake --version
