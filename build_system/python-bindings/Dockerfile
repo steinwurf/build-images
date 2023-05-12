@@ -30,6 +30,7 @@ RUN apt update --yes && \
     git \
     iproute2 \
     iperf \
+    iperf3 \
     iputils-ping
 
 RUN python3 -m pip install wheel

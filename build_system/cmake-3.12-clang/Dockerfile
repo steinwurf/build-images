@@ -18,16 +18,16 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 RUN apt update --yes && \
     apt install --yes --no-install-recommends \
-    # Required for the actions/checkout@v2 plugin
-    ca-certificates \
-    # Get SSH Client for Github Actions
-    openssh-client \
-    # Need make for cmake
-    make \
-    wget \
-    git \
-    python3.7 \
-    clang-4.0
+        # Required for the actions/checkout@v2 plugin
+        ca-certificates \
+        # Get SSH Client for Github Actions
+        openssh-client \
+        # Need make for cmake
+        make \
+        wget \
+        git \
+        python3.7 \
+        clang
 
 # Get cmake 3.12.4
 RUN ln -s /usr/include/locale.h /usr/include/xlocale.h \
@@ -44,8 +44,6 @@ RUN ln -s /usr/include/locale.h /usr/include/xlocale.h \
 
 # Set up path for python3.7 to python3
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 100
-RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-4.0 100 \
-    && update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-4.0 100
 
 RUN clang++ --version
 RUN cmake --version
