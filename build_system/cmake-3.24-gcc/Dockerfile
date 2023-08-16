@@ -22,6 +22,7 @@ RUN apt update --yes && \
     openssh-client \
     # Need make for cmake
     make \
+    ninja-build \
     git
 
 RUN cmake --version
