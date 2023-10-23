@@ -12,7 +12,7 @@ RUN apt update --yes && \
     apt install --yes --no-install-recommends \
     # Need python 3 for waf
     python3 \
-    # Latest version of clang (13.0) on Ubuntu 21.10
+    # Latest version of clang (15.0) on Ubuntu 22.10
     clang \
     # Required for the actions/checkout@v2 plugin
     ca-certificates \
