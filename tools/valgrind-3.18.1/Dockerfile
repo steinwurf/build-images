@@ -20,7 +20,8 @@ RUN apt update --yes && \
     openssh-client \
     # Get the latest version of valgrind (3.17.0) on Ubuntu 21.10
     valgrind \
-    git
+    git \
+    cmake
 
 RUN valgrind --version
 
