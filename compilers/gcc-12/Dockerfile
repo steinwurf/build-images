@@ -18,7 +18,8 @@ RUN apt update --yes && \
     ca-certificates \
     # Get SSH Client for Github Actions
     openssh-client \
-    git
+    git \
+    cmake
 
 RUN g++ --version
 
