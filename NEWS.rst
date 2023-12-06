@@ -6,4 +6,5 @@ every change, see the Git log.
 
 Latest
 ------
+* Minor: Add cmake to linux build images.
 * Major: Initial release.
