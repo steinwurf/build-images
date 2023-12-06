@@ -21,7 +21,8 @@ RUN apt update --yes && \
     # Get the latest version of valgrind (3.17.0) on Ubuntu 21.10
     valgrind \
     git \
-    cmake
+    cmake \
+    make 
 
 RUN valgrind --version
 

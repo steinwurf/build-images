@@ -20,7 +20,10 @@ RUN apt update --yes && \
     openssh-client \
     git \
     file \
-    cmake
+    cmake \
+    make \
+    # Needed for thread and address sanitizer
+    libclang-rt-15-dev 
 
 
 RUN clang --version
