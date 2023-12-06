@@ -19,7 +19,8 @@ RUN apt update --yes && \
     # Get SSH Client for Github Actions
     openssh-client \
     git \
-    file
+    file \
+    cmake
 
 
 RUN clang --version
