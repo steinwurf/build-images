@@ -23,7 +23,9 @@ RUN apt update --yes && \
     cmake \
     make \
     # Needed for thread and address sanitizer
-    libclang-rt-15-dev 
+    libclang-rt-15-dev \
+    # Needed for proper TSAN and ASAN support
+    llvm
 
 
 RUN clang --version
