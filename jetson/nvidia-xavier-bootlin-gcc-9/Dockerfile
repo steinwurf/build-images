@@ -18,7 +18,6 @@ RUN wget --no-check-certificate --quiet -O "/tmp/gcc-9.3.0-aarch64.tar.xz" "http
 
 RUN mkdir /opt/jetson-toolchain && tar -xzf /tmp/gcc-9.3.0-aarch64.tar.xz -C /opt/jetson-toolchain
 
-COPY environment-setup-evologics /usr/bin/environment-setup-evologics
+COPY environment-setup-cross /etc/environment-setup-cross
 
-RUN /usr/bin/environment-setup-evologics
 
