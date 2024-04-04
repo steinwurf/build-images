@@ -34,7 +34,8 @@ RUN apt update --yes && \
     gfortran \
     texinfo \
     bison \
-    libncurses-dev
+    libncurses-dev \
+    cmake
 
 RUN wget --no-check-certificate --quiet -O ./cross-gcc-10.3.0-pi_3+.tar.gz $DOWNLOAD_LINK \
     && tar xf ./cross-gcc-10.3.0-pi_3+.tar.gz

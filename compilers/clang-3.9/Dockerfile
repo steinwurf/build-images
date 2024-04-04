@@ -14,23 +14,23 @@ COPY sources.list /etc/apt/sources.list
 
 RUN apt update --yes && \
     apt install --yes --no-install-recommends \
-        # Latest version of gcc (6.3.0) on Ubuntu 17.04
-        g++-multilib=4:7.* \
-        # Required for the actions/checkout@v2 plugin
-        ca-certificates \
-        # Get SSH Client for Github Actions
-        openssh-client \
-        git \
-        clang-3.9 \
-        # Following packages are required to build python 3.7.5
-        zlib1g-dev=1:1.* \
-        libreadline-dev=7.* \
-        libsqlite3-dev=3.* \
-        libssl-dev=1.* \
-        libbz2-dev=1.* \
-        make \
-        wget \
-        && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.9 100
+    # Latest version of gcc (6.3.0) on Ubuntu 17.04
+    g++-multilib=4:7.* \
+    # Required for the actions/checkout@v2 plugin
+    ca-certificates \
+    # Get SSH Client for Github Actions
+    openssh-client \
+    git \
+    clang-3.9 \
+    # Following packages are required to build python 3.7.5
+    zlib1g-dev=1:1.* \
+    libreadline-dev=7.* \
+    libsqlite3-dev=3.* \
+    libssl-dev=1.* \
+    libbz2-dev=1.* \
+    make \
+    wget \
+    && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.9 100
 
 # Get python 3.7.5
 RUN wget --no-check-certificate --quiet -O /tmp/pyenv-installer https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer \
