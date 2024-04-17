@@ -1,6 +1,6 @@
 FROM python:3.9.0-slim
 
-ENV APP_VERSION="6.0.2" \
+ENV APP_VERSION="6.1.14" \
     APP="platformio-core"
 
 LABEL org.opencontainers.image.source https://github.com/steinwurf/build-images
