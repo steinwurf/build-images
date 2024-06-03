@@ -1,4 +1,4 @@
-FROM ubuntu:21.10
+FROM ubuntu:22.04
 
 USER root
 
@@ -18,26 +18,26 @@ ENV ANDROID_SDK_ROOT=$ANDROID_HOME \
 # Install prerequisites
 RUN apt-get update --yes  \
     && apt-get install --yes --no-install-recommends \
-        # Need openjdk for the gradle builds.
-        openjdk-16-jdk \
-        # Need python 3 for waf
-        python3 \
-        # Latest version of gcc
-        g++ \
-        # Need cmake for building the c++
-        cmake \
-        ninja-build \
-        build-essential \
-        # Required for the actions/checkout@v2 plugin
-        ca-certificates \
-        # Get SSH Client for Github Actions
-        openssh-client \
-        git \
-        wget \
-        tar \
-        unzip \
-        lib32stdc++6 \
-        lib32z1
+    # Need openjdk for the gradle builds.
+    openjdk-17-jdk \
+    # Need python 3 for waf
+    python3 \
+    # Latest version of gcc
+    g++ \
+    # Need cmake for building the c++
+    cmake \
+    ninja-build \
+    build-essential \
+    # Required for the actions/checkout@v2 plugin
+    ca-certificates \
+    # Get SSH Client for Github Actions
+    openssh-client \
+    git \
+    wget \
+    tar \
+    unzip \
+    lib32stdc++6 \
+    lib32z1
 
 RUN mkdir android-sdk
 

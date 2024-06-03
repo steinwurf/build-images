@@ -32,7 +32,8 @@ RUN apt update --yes && \
     openssh-client \
     git \
     file \
-    wget
+    wget \
+    tar
 
 RUN python3 -m pip install --upgrade pip && \
     python3 -m pip install black flake8
