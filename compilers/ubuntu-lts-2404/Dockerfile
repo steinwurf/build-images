@@ -16,6 +16,7 @@ RUN apt update --yes && \
     python3-pip \
     clang \
     libclang-rt-dev \
+    llvm \
     clang-format \
     # Latest version of gcc (11.2.0) on Ubuntu 21.10
     g++ \
