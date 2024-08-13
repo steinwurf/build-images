@@ -18,6 +18,8 @@ RUN apt update --yes && \
     libclang-rt-dev \
     llvm \
     clang-format \
+    zlib1g \
+    zlib1g-dev \
     # Latest version of gcc (11.2.0) on Ubuntu 21.10
     g++ \
     # Required for the actions/checkout@v2 plugin
