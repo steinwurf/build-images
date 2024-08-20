@@ -28,7 +28,8 @@ RUN apt update --yes && \
     openssh-client \
     git \
     cmake \
-    make
+    make \
+    zlib1g-dev
 
 RUN g++ --version
 
