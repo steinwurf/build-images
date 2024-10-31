@@ -42,5 +42,5 @@ RUN groupadd -g 988 actions-runner
 # -s: set the shell
 RUN useradd -m -g actions-runner -s /bin/bash -u 999 actions-runner
 
-# Switch to the new user (optional)
+# Switch to the new user
 USER actions-runner
