@@ -32,7 +32,6 @@ RUN apt update --yes && \
     iperf3 \
     iputils-ping
 
-
 # Create a new group
 RUN groupadd -g 988 actions-runner
 
@@ -42,5 +41,4 @@ RUN groupadd -g 988 actions-runner
 # -s: set the shell
 RUN useradd -m -g actions-runner -s /bin/bash -u 999 actions-runner
 
-# Switch to the new user
-USER actions-runner
+ENTRYPOINT [ "/bin/bash" ]
