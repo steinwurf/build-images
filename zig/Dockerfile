@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl ca-certificates gnupg unzip git \
     build-essential cmake ninja-build \
     python3 python3-pip python3-venv \
+    openssh-client \
     && rm -rf /var/lib/apt/lists/*
 
 # Download and install Zig from fixed URL pattern
