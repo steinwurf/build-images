@@ -7,8 +7,7 @@ ENV ZIG_VERSION=${ZIG_VERSION}
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl ca-certificates gnupg unzip git \
     build-essential cmake ninja-build \
-    python3 python3-pip python3-venv \
-    python3-dev \
+    python3-all python3-all-dev python3-pip \
     openssh-client \
     && rm -rf /var/lib/apt/lists/* 
 
