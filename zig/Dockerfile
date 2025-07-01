@@ -1,17 +1,26 @@
-FROM ubuntu:24.04
+FROM alpine:3.18
 
 ARG ZIG_VERSION=0.14.1
 ENV ZIG_VERSION=${ZIG_VERSION}
 
-# Install dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl ca-certificates gnupg unzip git \
-    build-essential cmake ninja-build \
-    python3-all python3-all-dev python3-pip \
-    openssh-client \
-    && rm -rf /var/lib/apt/lists/* 
+# Install dependencies (with glibc compatibility for Zig)
+RUN apk add --no-cache \
+      bash \
+      curl \
+      ca-certificates \
+      gnupg \
+      unzip \
+      git \
+      build-base \
+      cmake \
+      ninja \
+      python3 \
+      python3-dev \
+      py3-pip \
+      openssh-client \
+      libc6-compat
 
-# Download and install Zig from fixed URL pattern
+# Download and install Zig
 RUN set -eux; \
     ARCH=x86_64-linux; \
     FILENAME=zig-${ARCH}-${ZIG_VERSION}; \
