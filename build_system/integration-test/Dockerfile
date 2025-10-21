@@ -16,13 +16,14 @@ RUN apt update --yes && \
     python3-venv \
     python3-wheel \
     python3-pip \
-    # Latest version of gcc (9.3.0) on Ubuntu 20.04
+    # Latest version of gcc
     g++ \
+    gdb \
     build-essential \
     # Need cmake and ninja-build for building the bindings
     cmake \
     ninja-build \
-    # Required for the actions/checkout@v2 plugin
+    # Required for the actions/checkout plugin
     ca-certificates \
     # Get SSH Client for Github Actions
     openssh-client \
