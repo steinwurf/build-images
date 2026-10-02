@@ -6,5 +6,6 @@ every change, see the Git log.
 
 Latest
 ------
+* Minor: Add iptables to the integration test image.
 * Minor: Add cmake to linux build images.
 * Major: Initial release.
