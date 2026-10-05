@@ -29,6 +29,9 @@ RUN apt update --yes && \
     openssh-client \
     git \
     iproute2 \
+    # plumr's fault injection tests provoke ICMP destination unreachable
+    # codes that no route type produces, using iptables REJECT rules
+    iptables \
     iperf \
     iperf3 \
     iputils-ping
